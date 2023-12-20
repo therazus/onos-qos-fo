@@ -1,0 +1,34 @@
+.custom-footer {
+    background-color: #0a4275;
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .footer-content {
+    padding: 3px;
+  }
+  
+  .footer-content p {
+    /* paddi: 10px; */
+    font-family: 'poppins', 'sans-serif';
+    text-align: left;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  
+  .copyright {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1rem 0;
+  }
+  
+  .copyright{
+    font-family: 'poppins', 'sans-serif';
+    color: white;
+    text-decoration: none;
+  }
+  
+  .copyright a:hover {
+    text-decoration: underline;
+  }
+  

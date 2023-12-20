@@ -2,13 +2,29 @@ import React from "react";
 import "./home.css";
 import containerImg from "../../assets/queue_managment_system.png";
 
-import Section from "../../components/section/section";
+import Section from "../../components/Section/section";
+import VariableForum from "../../components/VariableForum/variableForum";
 
 import createImg from "../../assets/create.png";
 import showImg from "../../assets/tablet.png";
 import deleteImg from "../../assets/delete.png";
 
 const Home = () => {
+
+  const addVariables = [
+    ['Device Name', 'text'],
+    ['Max Rate', 'integer'],
+    ['Min Rate', 'integer'],
+  ];
+
+  const showVariables = [
+    ['Device Name', 'text'],
+    ['No of Devices', 'integer']
+  ];
+
+  const deleteVariables = [
+    ['Device Name', 'text'],
+  ];
   
   return (
     <>
@@ -24,7 +40,10 @@ const Home = () => {
         </div>
     </div>
 
-    <div>
+    <div className="section-start">
+      <div className="heading" style={{textAlign: 'left'}}>
+        Manage Queue
+      </div>
       <Section
         imageSrc = {createImg}
         topic="Create Queue"
@@ -32,9 +51,8 @@ const Home = () => {
         buttonText="Create"
         align={'left'}
       >
-        {/* Your content goes here */}
-        <div>
-          <p>This is the content that appears when the button is pressed.</p>
+        <div className="section-inner"> 
+          <VariableForum variables={addVariables} />
         </div>
       </Section>
 
@@ -45,9 +63,8 @@ const Home = () => {
         buttonText="Show"
         align={'right'}
       >
-        {/* Your content goes here */}
-        <div>
-          <p>This is the content that appears when the 'Show' button is pressed.</p>
+        <div className="section-inner">
+        <VariableForum variables={showVariables} />
         </div>
       </Section>
 
@@ -58,9 +75,8 @@ const Home = () => {
         buttonText="Delete"
         align={'left'}
       >
-        {/* Your content goes here */}
-        <div>
-          <p>This is the content that appears when the 'Delete' button is pressed.</p>
+        <div className="section-inner">
+          <VariableForum variables={deleteVariables} />
         </div>
       </Section>
     </div>
