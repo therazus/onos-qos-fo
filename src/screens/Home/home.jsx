@@ -2,7 +2,7 @@ import React from "react";
 import "./home.css";
 import containerImg from "../../assets/queue_managment_system.png";
 
-// import Section from "../../components/Section/section";
+import Section from "../../components/section/section";
 import VariableForum from "../../components/VariableForum/variableForum";
 
 import createImg from "../../assets/create.png";
