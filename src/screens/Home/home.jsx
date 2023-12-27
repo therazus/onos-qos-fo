@@ -6,7 +6,7 @@ import Section from "../../components/section/section";
 import VariableForum from "../../components/VariableForum/variableForum";
 
 import createImg from "../../assets/create.png";
-import devImg from "../../assets/device2.png";
+import devImg from "../../assets/device.png";
 import showImg from "../../assets/tablet.png";
 import deleteImg from "../../assets/delete.png";
 import SectionCard from "../../components/section/section";
