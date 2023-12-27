@@ -6,10 +6,11 @@ import containerImg from "../../assets/queue_managment_system.png";
 import VariableForum from "../../components/VariableForum/variableForum";
 
 import createImg from "../../assets/create.png";
+import devImg from "../../assets/device2.png";
 import showImg from "../../assets/tablet.png";
 import deleteImg from "../../assets/delete.png";
 import SectionCard from "../../components/section/section";
-import {createData, deleteData, fetchData} from "../../services/onosServices";
+import {createData, deleteData, fetchData, getDevices} from "../../services/onosServices";
 
 const Home = () => {
 
@@ -85,6 +86,27 @@ const Home = () => {
         </div>
       </SectionCard>
     </div>
+
+
+      <div className="section-start">
+        <div className="heading" style={{textAlign: 'left'}}>
+          Manage Devices
+        </div>
+
+        <SectionCard
+            imageSrc={devImg}
+            topic="Show Devices"
+            description="Show information about a devices in action and view its configuration and status."
+            buttonText="Show"
+            align={'right'}
+            onClick={getDevices}
+        >
+          <div className="section-inner">
+            <VariableForum variables={showVariables} />
+          </div>
+        </SectionCard>
+
+      </div>
 </>
 
   );
