@@ -32,9 +32,13 @@ const VariableForum = ({ variables, onOperateButtonClick }) => {
           </div>
         </div>
       ))}
+
+      
       <button className="operate-button" onClick={handleOperateButtonClick}>
         Operate
       </button>
+   
+      
     </div>
   );
 };

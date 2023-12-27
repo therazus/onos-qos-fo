@@ -2,8 +2,8 @@ import React from "react";
 import "./home.css";
 import containerImg from "../../assets/queue_managment_system.png";
 
-import Section from "../../components/section/section";
 import VariableForum from "../../components/VariableForum/variableForum";
+import InfoForum from "../../components/InforForum/infoforum";
 
 import createImg from "../../assets/create.png";
 import devImg from "../../assets/device.png";
@@ -56,7 +56,7 @@ const Home = () => {
         onClick={createData}
       >
         <div className="section-inner"> 
-          <VariableForum variables={addVariables} />
+          <VariableForum variables={addVariables}  />
         </div>
       </SectionCard>
 
@@ -102,7 +102,7 @@ const Home = () => {
             onClick={getDevices}
         >
           <div className="section-inner">
-            <VariableForum variables={showVariables} />
+            <InfoForum variables={showVariables} />
           </div>
         </SectionCard>
 
