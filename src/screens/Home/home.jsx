@@ -9,6 +9,7 @@ import createImg from "../../assets/create.png";
 import showImg from "../../assets/tablet.png";
 import deleteImg from "../../assets/delete.png";
 import SectionCard from "../../components/section/section";
+import {createData, deleteData, fetchData} from "../../services/onosServices";
 
 const Home = () => {
 
@@ -51,6 +52,7 @@ const Home = () => {
         description="Create a queue in Open vSwitch to manage network traffic and enhance network performance."
         buttonText="Create"
         align={'left'}
+        onClick={createData}
       >
         <div className="section-inner"> 
           <VariableForum variables={addVariables} />
@@ -63,6 +65,7 @@ const Home = () => {
         description="Show information about a queue in Open vSwitch to view its configuration and status."
         buttonText="Show"
         align={'right'}
+        onClick={fetchData}
       >
         <div className="section-inner">
         <VariableForum variables={showVariables} />
@@ -75,6 +78,7 @@ const Home = () => {
         description="Delete a queue in Open vSwitch to remove it from the network configuration."
         buttonText="Delete"
         align={'left'}
+        onClick={deleteData}
       >
         <div className="section-inner">
           <VariableForum variables={deleteVariables} />
