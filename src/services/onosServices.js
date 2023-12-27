@@ -53,12 +53,12 @@ export const getDevices = async () => {
         const response = await axios.delete(apiEndPoint);
         const result = response.data.devices[0];
 
-        const data = {
-            type: result.type,
-            role: result.role,
-            update: result.humanReadableLastUpdate,
-            channel: result.annotations.channelId
-        }
+        const data = [
+            ['Device Type', result.type],
+            ['Device Role', result.role],
+            ['Last Update', result.humanReadableLastUpdate],
+            ['Channel IP', result.annotations.channelId],
+        ];
 
         return data;
     } catch {

@@ -6,7 +6,7 @@ const InfoForum = ({ variables }) => {
   
   return (
     <div className="info-forum">
-      {variables.map(([infoName, infoData]) => (
+      {variables.map(([infoName, infoData, value]) => (
         <div key={infoName} className="info-row">
           <div className="left-variable">
             <label>{infoName}:</label>

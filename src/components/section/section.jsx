@@ -12,6 +12,9 @@ const SectionCard = ({ imageSrc, topic, description, buttonText, type, variables
       setIsContentVisible(!isContentVisible);
       const data = await onClick();
 
+      if (type === 'info') {
+          variables = data;
+      }
 
   };
 

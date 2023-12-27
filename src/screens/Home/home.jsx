@@ -30,9 +30,10 @@ const Home = () => {
   ];
 
   const showDevice = [
-    ['Device Name', 'text'],
-    ['Device Type', 'text'],
-    ['Device IP', 'text'],
+    ['Device Role', ''],
+    ['Device Type', ''],
+    ['Last Update', ''],
+    ['Channel IP', '']
   ];
   
   return (
