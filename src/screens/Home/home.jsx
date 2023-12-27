@@ -2,9 +2,6 @@ import React from "react";
 import "./home.css";
 import containerImg from "../../assets/queue_managment_system.png";
 
-import VariableForum from "../../components/VariableForum/variableForum";
-import InfoForum from "../../components/InforForum/infoforum";
-
 import createImg from "../../assets/create.png";
 import devImg from "../../assets/device.png";
 import showImg from "../../assets/tablet.png";
@@ -30,9 +27,10 @@ const Home = () => {
   ];
 
   const showDevice = [
-    ['Device Name', 'text'],
-    ['Device Type', 'text'],
-    ['Device IP', 'text'],
+    ['Device Type', 'SWITCH'],
+    ['Device Role', 'KALA'],
+    ['Last Updated Time', '16:50:45'],
+    ['Device IP', '192.168.101.2']
   ];
   
   return (

@@ -15,7 +15,7 @@ import { useState } from "react";
 import { themeTyp, themeNav } from "../../assets/Themes/theme";
 import img1 from "../../assets/Open_vSwitch_Logo.svg.png";
 
-const pages = ["Home", "Manage Queue", "Terminal", "About"];
+const pages = ["Home", "Manage Queue", "Manage Devices", "About"];
 
 
 function ResponsiveAppBar() {
