@@ -60,10 +60,9 @@ const Home = () => {
         buttonText="Create"
         align={'left'}
         onClick={createData}
+        type={'var'}
+        variables={addVariables}
       >
-        <div className="section-inner"> 
-          <VariableForum variables={addVariables}  />
-        </div>
       </SectionCard>
 
       <SectionCard
@@ -73,10 +72,9 @@ const Home = () => {
         buttonText="Show"
         align={'right'}
         onClick={fetchData}
+        type={'var'}
+        variables={showVariables}
       >
-        <div className="section-inner">
-        <VariableForum variables={showVariables} />
-        </div>
       </SectionCard>
 
       <SectionCard
@@ -86,10 +84,9 @@ const Home = () => {
         buttonText="Delete"
         align={'left'}
         onClick={deleteData}
+        type={'var'}
+        variables={deleteVariables}
       >
-        <div className="section-inner">
-          <VariableForum variables={deleteVariables} />
-        </div>
       </SectionCard>
     </div>
 
@@ -106,10 +103,9 @@ const Home = () => {
             buttonText="Show"
             align={'right'}
             onClick={getDevices}
+            type={'info'}
+            variables={showDevice}
         >
-          <div className="section-inner">
-            <InfoForum variables={showDevice} />
-          </div>
         </SectionCard>
 
       </div>

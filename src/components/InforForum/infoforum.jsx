@@ -5,9 +5,9 @@ import './infoforum.css';
 const InfoForum = ({ variables }) => {
   
   return (
-    <div className="variable-forum">
+    <div className="info-forum">
       {variables.map(([infoName, infoData]) => (
-        <div key={infoName} className="variable-row">
+        <div key={infoName} className="info-row">
           <div className="left-variable">
             <label>{infoName}:</label>
           </div>

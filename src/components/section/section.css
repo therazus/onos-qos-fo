@@ -73,4 +73,10 @@
   .content.visible {
     display: block;
   }
+
+  .section-inner{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
   

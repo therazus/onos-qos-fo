@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './section.css';
-import {fetchData} from "../../services/onosServices"; // Import your stylesheet for styling
 
-const SectionCard = ({ imageSrc, topic, description, buttonText, children, align, onClick }) => {
+import InfoForum from "../InforForum/infoforum";
+import VariableForum from '../VariableForum/variableForum';
+
+const SectionCard = ({ imageSrc, topic, description, buttonText, type, variables, align, onClick }) => {
   const [isContentVisible, setIsContentVisible] = useState(false);
 
   const toggleContentVisibility = async () => {
@@ -39,7 +41,10 @@ const SectionCard = ({ imageSrc, topic, description, buttonText, children, align
                 }
             </div>
             <div className={`content ${isContentVisible ? 'visible' : 'hidden'}`}>
-                    {children}
+                    
+          <div className="section-inner">
+            {type === 'var' ? <VariableForum variables={variables} onOperateButtonClick={onClick} /> : <InfoForum variables={variables} />}
+          </div>
             </div>
         </div>
     </div>
@@ -51,8 +56,10 @@ SectionCard.propTypes = {
   topic: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
-  children: PropTypes.node,
   align: PropTypes.oneOf(['left', 'right']),
+  type: PropTypes.oneOf(['var', 'info']),
+  variables: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+
 };
 
 export default SectionCard;
