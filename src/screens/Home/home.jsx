@@ -8,7 +8,7 @@ import VariableForum from "../../components/VariableForum/variableForum";
 import createImg from "../../assets/create.png";
 import showImg from "../../assets/tablet.png";
 import deleteImg from "../../assets/delete.png";
-import SectionCard from "../../components/Section/section";
+import SectionCard from "../../components/section/section";
 import {createData, deleteData, fetchData} from "../../services/onosServices";
 
 const Home = () => {
