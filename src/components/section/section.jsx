@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import './section.css';
 import {fetchData} from "../../services/onosServices"; // Import your stylesheet for styling
 
-const SectionCard = ({ imageSrc, topic, description, buttonText, children, align }) => {
+const SectionCard = ({ imageSrc, topic, description, buttonText, children, align, onClick }) => {
   const [isContentVisible, setIsContentVisible] = useState(false);
 
-  const toggleContentVisibility = () => {
-    setIsContentVisible(!isContentVisible);
-    fetchData();
+  const toggleContentVisibility = async () => {
+      setIsContentVisible(!isContentVisible);
+      const data = await onClick();
   };
 
   return (
