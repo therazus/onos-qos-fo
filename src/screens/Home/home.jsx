@@ -28,6 +28,12 @@ const Home = () => {
   const deleteVariables = [
     ['Device Name', 'text'],
   ];
+
+  const showDevice = [
+    ['Device Name', 'text'],
+    ['Device Type', 'text'],
+    ['Device IP', 'text'],
+  ];
   
   return (
     <>
@@ -102,7 +108,7 @@ const Home = () => {
             onClick={getDevices}
         >
           <div className="section-inner">
-            <InfoForum variables={showVariables} />
+            <InfoForum variables={showDevice} />
           </div>
         </SectionCard>
 
