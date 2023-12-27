@@ -2,12 +2,13 @@ import React from "react";
 import "./home.css";
 import containerImg from "../../assets/queue_managment_system.png";
 
-import Section from "../../components/Section/section";
+// import Section from "../../components/Section/section";
 import VariableForum from "../../components/VariableForum/variableForum";
 
 import createImg from "../../assets/create.png";
 import showImg from "../../assets/tablet.png";
 import deleteImg from "../../assets/delete.png";
+import SectionCard from "../../components/section/section";
 
 const Home = () => {
 
@@ -44,7 +45,7 @@ const Home = () => {
       <div className="heading" style={{textAlign: 'left'}}>
         Manage Queue
       </div>
-      <Section
+      <SectionCard
         imageSrc = {createImg}
         topic="Create Queue"
         description="Create a queue in Open vSwitch to manage network traffic and enhance network performance."
@@ -54,9 +55,9 @@ const Home = () => {
         <div className="section-inner"> 
           <VariableForum variables={addVariables} />
         </div>
-      </Section>
+      </SectionCard>
 
-      <Section
+      <SectionCard
         imageSrc={showImg}
         topic="Show Queue"
         description="Show information about a queue in Open vSwitch to view its configuration and status."
@@ -66,9 +67,9 @@ const Home = () => {
         <div className="section-inner">
         <VariableForum variables={showVariables} />
         </div>
-      </Section>
+      </SectionCard>
 
-      <Section
+      <SectionCard
         imageSrc={deleteImg}
         topic="Delete Queue"
         description="Delete a queue in Open vSwitch to remove it from the network configuration."
@@ -78,7 +79,7 @@ const Home = () => {
         <div className="section-inner">
           <VariableForum variables={deleteVariables} />
         </div>
-      </Section>
+      </SectionCard>
     </div>
 </>
 
