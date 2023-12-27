@@ -51,7 +51,16 @@ export const getDevices = async () => {
     console.log("Getting devices");
     try {
         const response = await axios.delete(apiEndPoint);
-        return response.data;
+        const result = response.data.devices[0];
+
+        const data = {
+            type: result.type,
+            role: result.role,
+            update: result.humanReadableLastUpdate,
+            channel: result.annotations.channelId
+        }
+
+        return data;
     } catch {
         console.log("Can not connect to the onos server");
     }

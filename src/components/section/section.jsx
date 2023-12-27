@@ -9,6 +9,8 @@ const SectionCard = ({ imageSrc, topic, description, buttonText, children, align
   const toggleContentVisibility = async () => {
       setIsContentVisible(!isContentVisible);
       const data = await onClick();
+
+
   };
 
   return (

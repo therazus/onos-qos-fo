@@ -28,6 +28,13 @@ const Home = () => {
   const deleteVariables = [
     ['Device Name', 'text'],
   ];
+
+  const deviceVariables = [
+    ['Device Type', 'text'],
+    ['Device Role', 'text'],
+    ['Last Update', 'text'],
+    ['Channel Id', 'text']
+  ];
   
   return (
     <>
@@ -102,7 +109,7 @@ const Home = () => {
             onClick={getDevices}
         >
           <div className="section-inner">
-            <VariableForum variables={showVariables} />
+            <VariableForum variables={deviceVariables} />
           </div>
         </SectionCard>
 
