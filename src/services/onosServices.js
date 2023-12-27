@@ -1,10 +1,21 @@
 import axios from "axios";
 
-const apiEndPoint = "";
+const apiEndPoint = "http://localhost:8181/onos/QoS-app/api/getQueue";
+const username = 'onos';
+const password = 'rocks';
+
+const basicAuth = btoa(`${username}:${password}`);
 
 export const fetchData = async () => {
     try {
-        const response = await axios.get(apiEndPoint);
+        const response = await axios.get(apiEndPoint, {
+            headers: {
+                'Authorization': `Basic ${basicAuth}`,
+                'Content-Type': 'application/json',
+            },
+        });
+
+        console.log("Data aawa cuuda. Mewa hari carala dewal.", response.data);
         return response.data;
     } catch {
         console.log("Can not connect to the onos server");
