@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './section.css'; // Import your stylesheet for styling
+import './section.css';
+import {fetchData} from "../../services/onosServices"; // Import your stylesheet for styling
 
 const SectionCard = ({ imageSrc, topic, description, buttonText, children, align }) => {
   const [isContentVisible, setIsContentVisible] = useState(false);
 
   const toggleContentVisibility = () => {
     setIsContentVisible(!isContentVisible);
+    fetchData();
   };
 
   return (
