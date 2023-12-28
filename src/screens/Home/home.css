@@ -55,6 +55,14 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
   }
+
+  .floating-button:hover {
+    background-color: #404caa;
+  }
+
+  .floating-button:active {
+    background-color: #171935;
+  }
   
 
   .section-start{

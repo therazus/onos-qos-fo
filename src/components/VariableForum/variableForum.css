@@ -55,4 +55,13 @@
     font-weight: 700;
     margin-inline-end: 20px;
   }
+
+  .operate-button:hover {
+    background-color: #404caa;
+  }
+
+  .operate-button:active {
+    background-color: #171935;
+  }
+
   

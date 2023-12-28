@@ -1,12 +1,14 @@
 import axios from "axios";
 
+const backUrl = "https://76be-2402-4000-21c3-404a-1acd-d01f-8efd-20e6.ngrok-free.app";
 const username = 'onos';
 const password = 'rocks';
 
 const basicAuth = btoa(`${username}:${password}`);
 
 export const fetchData = async () => {
-    const apiEndPoint = "https://76be-2402-4000-21c3-404a-1acd-d01f-8efd-20e6.ngrok-free.app/onos/QoS-app/api/getQueue";
+    // const apiEndPoint = "https://76be-2402-4000-21c3-404a-1acd-d01f-8efd-20e6.ngrok-free.app/onos/QoS-app/api/getQueue";
+    const apiEndPoint = `${backUrl}/onos/QoS-app/api/getQueue`
     console.log("Fetching data");
     try {
         const response = await axios.get(apiEndPoint, {
@@ -24,7 +26,7 @@ export const fetchData = async () => {
 };
 
 export const createData = async (data) => {
-    const apiEndPoint = "https://76be-2402-4000-21c3-404a-1acd-d01f-8efd-20e6.ngrok-free.app/onos/QoS-app/api/updateQueue";
+    const apiEndPoint = `${backUrl}/onos/QoS-app/api/updateQueue`;
     console.log("Creating data");
     try {
         const response = await axios.post(apiEndPoint, data);
@@ -35,7 +37,7 @@ export const createData = async (data) => {
 };
 
 export const deleteData = async (id) => {
-    const apiEndPoint = "https://76be-2402-4000-21c3-404a-1acd-d01f-8efd-20e6.ngrok-free.app/onos/QoS-app/api/deleteQueue";
+    const apiEndPoint = `${backUrl}/onos/QoS-app/api/deleteQueue`;
     console.log("Deleting data");
     try {
         const response = await axios.delete(apiEndPoint, id);
@@ -47,8 +49,9 @@ export const deleteData = async (id) => {
 
 
 export const getDevices = async () => {
-    const apiEndPoint = "https://76be-2402-4000-21c3-404a-1acd-d01f-8efd-20e6.ngrok-free.app/onos/v1/devices";
+    const apiEndPoint = `${backUrl}/onos/v1/devices`;
     console.log("Getting devices");
+    alert("Getting devices");
     try {
         const response = await axios.delete(apiEndPoint);
         const result = response.data.devices[0];
@@ -61,9 +64,11 @@ export const getDevices = async () => {
         ];
 
         console.log(data);
-
+        alert("Success");
         return data;
+    
     } catch {
         console.log("Can not connect to the onos server");
+        alert("Can not connect to the onos server");
     }
 };

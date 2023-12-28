@@ -10,11 +10,7 @@ const SectionCard = ({ imageSrc, topic, description, buttonText, type, variables
 
   const toggleContentVisibility = async () => {
       setIsContentVisible(!isContentVisible);
-      const data = await onClick();
-      // if (type === 'info') {
-      //     variables = data;
-      // }
-
+      onClick();
   };
 
   return (
@@ -45,7 +41,20 @@ const SectionCard = ({ imageSrc, topic, description, buttonText, type, variables
             <div className={`content ${isContentVisible ? 'visible' : 'hidden'}`}>
                     
           <div className="section-inner">
-            {type === 'var' ? <VariableForum variables={variables} onOperateButtonClick={onClick} /> : <InfoForum variables={variables} />}
+            {
+            type === 'var' ? <VariableForum variables={variables} onOperateButtonClick={onClick} /> : 
+            
+            // <InfoForum variables={variables} />
+
+            // variables.map((variable, index)=>(
+            //   <InfoForum variables={variable}></InfoForum>
+            // ))
+            variables.length !== 0 ? 
+            variables.map((variable, index)=>(
+              <InfoForum variables={variable}></InfoForum>
+            )) : 
+              console.log("No data")
+            }
           </div>
             </div>
         </div>
