@@ -11,10 +11,9 @@ const SectionCard = ({ imageSrc, topic, description, buttonText, type, variables
   const toggleContentVisibility = async () => {
       setIsContentVisible(!isContentVisible);
       const data = await onClick();
-
-      if (type === 'info') {
-          variables = data;
-      }
+      // if (type === 'info') {
+      //     variables = data;
+      // }
 
   };
 

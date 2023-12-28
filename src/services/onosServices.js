@@ -6,7 +6,7 @@ const password = 'rocks';
 const basicAuth = btoa(`${username}:${password}`);
 
 export const fetchData = async () => {
-    const apiEndPoint = "http://localhost:8181/onos/QoS-app/api/getQueue";
+    const apiEndPoint = "https://76be-2402-4000-21c3-404a-1acd-d01f-8efd-20e6.ngrok-free.app/onos/QoS-app/api/getQueue";
     console.log("Fetching data");
     try {
         const response = await axios.get(apiEndPoint, {
@@ -24,7 +24,7 @@ export const fetchData = async () => {
 };
 
 export const createData = async (data) => {
-    const apiEndPoint = "http://localhost:8181/onos/QoS-app/api/updateQueue";
+    const apiEndPoint = "https://76be-2402-4000-21c3-404a-1acd-d01f-8efd-20e6.ngrok-free.app/onos/QoS-app/api/updateQueue";
     console.log("Creating data");
     try {
         const response = await axios.post(apiEndPoint, data);
@@ -35,7 +35,7 @@ export const createData = async (data) => {
 };
 
 export const deleteData = async (id) => {
-    const apiEndPoint = "http://localhost:8181/onos/QoS-app/api/deleteQueue";
+    const apiEndPoint = "https://76be-2402-4000-21c3-404a-1acd-d01f-8efd-20e6.ngrok-free.app/onos/QoS-app/api/deleteQueue";
     console.log("Deleting data");
     try {
         const response = await axios.delete(apiEndPoint, id);
@@ -47,7 +47,7 @@ export const deleteData = async (id) => {
 
 
 export const getDevices = async () => {
-    const apiEndPoint = "http://localhost:8181/onos/v1/devices";
+    const apiEndPoint = "https://76be-2402-4000-21c3-404a-1acd-d01f-8efd-20e6.ngrok-free.app/onos/v1/devices";
     console.log("Getting devices");
     try {
         const response = await axios.delete(apiEndPoint);
@@ -59,6 +59,8 @@ export const getDevices = async () => {
             ['Last Update', result.humanReadableLastUpdate],
             ['Channel IP', result.annotations.channelId],
         ];
+
+        console.log(data);
 
         return data;
     } catch {

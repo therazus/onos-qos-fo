@@ -1,11 +1,13 @@
 import React from "react";
 import "./home.css";
+
 import containerImg from "../../assets/queue_managment_system.png";
 
 import createImg from "../../assets/create.png";
 import devImg from "../../assets/device.png";
 import showImg from "../../assets/tablet.png";
 import deleteImg from "../../assets/delete.png";
+
 import SectionCard from "../../components/section/section";
 import {createData, deleteData, fetchData, getDevices} from "../../services/onosServices";
 
@@ -26,12 +28,17 @@ const Home = () => {
     ['Device Name', 'text'],
   ];
 
-  const showDevice = [
+  let showDevice = [
     ['Device Type', 'SWITCH'],
     ['Device Role', 'KALA'],
     ['Last Updated Time', '16:50:45'],
     ['Device IP', '192.168.101.2']
   ];
+
+  const onClickShow = async () => {
+    const data = await getDevices();
+    showDevice = data;
+  }
   
   return (
     <>
@@ -100,7 +107,7 @@ const Home = () => {
             description="Show information about a devices in action and view its configuration and status."
             buttonText="Show"
             align={'right'}
-            onClick={getDevices}
+            onClick={ onClickShow}
             type={'info'}
             variables={showDevice}
         >
