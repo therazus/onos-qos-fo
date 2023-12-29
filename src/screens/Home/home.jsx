@@ -37,7 +37,7 @@ const Home = () => {
   // ];
 
   const deleteVariables = [
-    ['Device Name', 'text'],
+    ['Queue Id', 'text'],
   ];
 
 //   let showDevice = [[
