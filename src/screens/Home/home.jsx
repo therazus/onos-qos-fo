@@ -10,6 +10,7 @@ import deleteImg from "../../assets/delete.png";
 
 import SectionCard from "../../components/section/section";
 import {createData, deleteData, fetchData, getDevices} from "../../services/onosServices";
+import InfoForum from "../../components/InforForum/infoforum";
 
 const Home = () => {
   const handleScroll = () => {
@@ -25,7 +26,7 @@ const Home = () => {
   const addVariables = [
     ['Device Id', 'text'],
       ['Port Number', 'text'],
-      ['Queue Description', 'texts'],
+      ['Queue Description', 'topic'],
     ['Max Rate', 'integer'],
     ['Min Rate', 'integer'],
       ['Device Id', 'text'],
@@ -61,14 +62,20 @@ const Home = () => {
         ['Last Updated Time', '16:50:45'],
         ['Device IP', '192.168.101.2']],
     
-        [
-        ['Device ID', 'D002'],
-        ['Device Type', 'SWITCH'],
-        ['Device Role', 'KALA'],
-        ['Last Updated Time', '16:50:45'],
-        ['Device IP', '192.168.101.2']
+        ]);
 
-  ]]);
+
+  const [showQueueDetails, setShowQueueDetails] = React.useState([[
+        ['Device Id', 'f'],
+        ['Port Number', ''],
+        ['Queue Description', 'topic'],
+        ['Max Rate', ''],
+        ['Min Rate', ''],
+        ['Device Id', '']
+  ],]);
+
+
+
 
   const onClickShow = async () => {
     const data = await getDevices();
@@ -85,7 +92,34 @@ const Home = () => {
       setShowVariables(temp);
     }
   }
+
+
+
+
+  const [isShowQueueDetails, setIsShowQueueDetails] = React.useState(false);
+  const onClickShowQueue = async () => {
+    // const data = await fetchData();
+    // if(data){
+    //   let temp = [];
+    //   data.map((device, index)=>(
+    //     temp.push([
+    //         ['Device Id', device.deviceId],
+    //         ['Port Number', device.portNumber],
+    //         ['Queue Description', 'topic'],
+    //         ['Max Rate', device.maxRate],
+    //         ['Min Rate', device.minRate],
+    //         ['Device Id', device.deviceId]
+    //     ])
+    //   ))
+
+    //   setShowQueueDetails(temp);
+      
+    // }
+    console.log("Show Queue Details");
+    setIsShowQueueDetails(true);
+  }
   
+
   return (
     <>
     <div className="header-container" id='Home'>
@@ -122,10 +156,15 @@ const Home = () => {
         description="Show information about a queue in Open vSwitch to view its configuration and status."
         buttonText="Show"
         align={'right'}
-        onClick={fetchData}
+        onOperateButtonClick={onClickShowQueue}
         type={'var'}
         variables={showVariable}
       >
+        {isShowQueueDetails && showQueueDetails.length !== 0 ?
+                showQueueDetails.map((variable, index) => (
+                  <InfoForum variables={variable} key={index} />
+                )) :
+                console.log("No data")}
       </SectionCard>
 
       <SectionCard

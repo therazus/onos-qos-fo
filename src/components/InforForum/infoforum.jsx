@@ -17,12 +17,20 @@ const InfoForum = ({ variables }) => {
           <div className='info-raw'>
             {variables.map(([infoName, infoData]) => (
               <div key={infoName} className="info-row open">
+
+              {infoData === 'topic' ?
+                <div className='topic'>
+                  <label>{infoName}</label>
+                </div> : 
+                <>
                 <div className="left-variable">
                   <label>{infoName}:</label>
                 </div>
                 <div className="right-variable">
                   {infoData}
                 </div>
+                </>
+                }
               </div>
             ))}
           </div>
