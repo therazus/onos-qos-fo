@@ -69,6 +69,5 @@ export const getDevices = async () => {
     
     } catch {
         console.log("Can not connect to the onos server");
-        alert("Can not connect to the onos server");
     }
 };
