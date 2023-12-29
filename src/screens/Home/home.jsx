@@ -23,9 +23,12 @@ const Home = () => {
 
 
   const addVariables = [
-    ['Device Name', 'text'],
+    ['Device Id', 'text'],
+      ['Port Number', 'text'],
+      ['Queue Description', 'texts'],
     ['Max Rate', 'integer'],
     ['Min Rate', 'integer'],
+      ['Device Id', 'text'],
   ];
 
   // const showVariables = [
