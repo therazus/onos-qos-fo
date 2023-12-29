@@ -23,18 +23,21 @@ const Home = () => {
 
 
   const addVariables = [
-    ['Device Name', 'text'],
+    ['Device Id', 'text'],
+      ['Port Number', 'text'],
+      ['Queue Description', 'texts'],
     ['Max Rate', 'integer'],
     ['Min Rate', 'integer'],
+      ['Device Id', 'text'],
   ];
 
-  // const showVariables = [
-  //   ['Device Name', 'text'],
-  //   ['No of Devices', 'integer']
-  // ];
+  const showVariable = [
+      ['Device Id', 'text'],
+      ['Port Number', 'text'],
+  ];
 
   const deleteVariables = [
-    ['Device Name', 'text'],
+    ['Queue Id', 'text'],
   ];
 
 //   let showDevice = [[
@@ -120,8 +123,8 @@ const Home = () => {
         buttonText="Show"
         align={'right'}
         onClick={fetchData}
-        type={'info'}
-        variables={showVariables}
+        type={'var'}
+        variables={showVariable}
       >
       </SectionCard>
 
