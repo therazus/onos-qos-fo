@@ -37,21 +37,35 @@ const Home = () => {
     ['Device Name', 'text'],
   ];
 
-  // let showDevice = [[
-  //   ['Device Type', 'SWITCH'],
-  //   ['Device Role', 'KALA'],
-  //   ['Last Updated Time', '16:50:45'],
-  //   ['Device IP', '192.168.101.2']],
+//   let showDevice = [[
+//     ['Device Type', 'SWITCH'],
+//     ['Device Role', 'KALA'],
+//     ['Last Updated Time', '16:50:45'],
+//     ['Device IP', '192.168.101.2']],
 
-  //   [['Device Type', 'SWITCH'],
-  //   ['Device Role', 'KALA'],
-  //   ['Last Updated Time', '16:50:45'],
-  //   ['Device IP', '192.168.101.2']]
+//     [['Device Type', 'SWITCH'],
+//     ['Device Role', 'KALA'],
+//     ['Last Updated Time', '16:50:45'],
+//     ['Device IP', '192.168.101.2']]
 // ];
 
   const[showVariables, setShowVariables] = React.useState([[]]);
 
-  const [showDevice, setShowDevice] = React.useState([[]]);
+  const [showDevice, setShowDevice] = React.useState([[
+        ['Device ID', 'D001'], 
+        ['Device Type', 'SWITCH'],
+        ['Device Role', 'KALA'],
+        ['Last Updated Time', '16:50:45'],
+        ['Device IP', '192.168.101.2']],
+    
+        [
+        ['Device ID', 'D002'],
+        ['Device Type', 'SWITCH'],
+        ['Device Role', 'KALA'],
+        ['Last Updated Time', '16:50:45'],
+        ['Device IP', '192.168.101.2']
+
+  ]]);
 
   const onClickShow = async () => {
     const data = await getDevices();

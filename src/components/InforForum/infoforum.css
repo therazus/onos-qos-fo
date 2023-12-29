@@ -37,3 +37,27 @@
     background-color:  rgb(196, 198, 207);
   }
   
+
+  .left-drop {
+    height: 35px;
+    padding-top: 7px;
+    flex: 2;
+    text-align: center;
+    margin-right: 10px;
+    font-weight: 700
+  }
+
+
+  .info-forum .right-drop {
+    flex: 6;
+    height: 35px;
+    padding-top: 7px;
+    text-align: center;
+    font-weight: 700;
+    margin-right: 10px; 
+  }
+
+  .arrow-div{
+    flex: 1
+  }
+  
