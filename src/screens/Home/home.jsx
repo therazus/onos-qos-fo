@@ -31,10 +31,10 @@ const Home = () => {
       ['Device Id', 'text'],
   ];
 
-  // const showVariables = [
-  //   ['Device Name', 'text'],
-  //   ['No of Devices', 'integer']
-  // ];
+  const showVariable = [
+      ['Device Id', 'text'],
+      ['Port Number', 'text'],
+  ];
 
   const deleteVariables = [
     ['Queue Id', 'text'],
@@ -123,8 +123,8 @@ const Home = () => {
         buttonText="Show"
         align={'right'}
         onClick={fetchData}
-        type={'info'}
-        variables={showVariables}
+        type={'var'}
+        variables={showVariable}
       >
       </SectionCard>
 
