@@ -64,4 +64,9 @@
     background-color: #171935;
   }
 
-  
+  .topic{
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: underline;
+
+  }

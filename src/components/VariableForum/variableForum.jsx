@@ -24,12 +24,20 @@ const VariableForum = ({ variables, onOperateButtonClick }) => {
     <div className="variable-forum">
       {variables.map(([variableName, variableType]) => (
         <div key={variableName} className="variable-row">
-          <div className="left-variable">
-            <label>{variableName}:</label>
-          </div>
-          <div className="right-variable">
-            {generateInputByType(variableName, variableType, handleInputChange)}
-          </div>
+        {variableType === 'topic' ?
+        <div className='topic'>
+          <label>{variableName}</label>
+        </div> : 
+        <>
+        <div className="left-variable">
+          <label>{variableName}:</label>
+        </div>
+        <div className="right-variable">
+          {generateInputByType(variableName, variableType, handleInputChange)}
+        </div>
+        </>
+        }
+          
         </div>
       ))}
 
